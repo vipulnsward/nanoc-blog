@@ -1,0 +1,194 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  font-family: Georgia, Palatino, Times, 'Times New Roman', sans-serif;
+}
+
+
+body {
+	  background-image: url('image/paper_2.png');
+	   font-size: 16px;
+    }
+
+a {
+  text-decoration: none;
+}
+
+a:link,
+a:visited {
+  color: #f30;
+}
+
+a:hover {
+  color: #f90;
+  text-shadow: 0px 0px 8px rgba(150, 150, 150, 1);
+  -webkit-text-shadow: 0px 0px 8px rgba(150, 150, 150, 1);
+  -moz-text-shadow: 0px 0px 8px rgba(150, 150, 150, 1);
+  -o-text-shadow: 0px 0px 8px rgba(150, 150, 150, 1);
+}
+
+
+#main {
+  position: absolute;
+
+  top: 40px;
+  left: 280px;
+
+  width: 500px;
+}
+
+#main h1 {
+  font-size: 40px;
+  font-weight: normal;
+
+  line-height: 40px;
+
+  letter-spacing: -1px;
+}
+
+#main p {
+  margin: 20px 0;
+  
+  font-size: 15px;
+  
+  line-height: 20px;
+}
+
+#main ul, #main ol {
+  margin: 20px;
+}
+
+#main li {
+  font-size: 15px;
+  
+  line-height: 20px;
+}
+
+#main ul li {
+  list-style-type: square;
+}
+
+#sidebar {
+  position: absolute;
+
+  top: 40px;
+  left: 20px;
+  width: 200px;
+
+  padding: 20px 20px 0 0;
+
+  border-right: 1px solid #ccc;
+
+  text-align: right;
+}
+
+#sidebar h2 {
+  text-transform: uppercase;
+
+  font-size: 13px;
+
+  color: #333;
+
+  letter-spacing: 1px;
+
+  line-height: 20px;
+}
+
+#sidebar ul {
+  list-style-type: none;
+
+  margin: 20px 0;
+}
+
+#sidebar li {
+  font-size: 14px;
+  font-family: 'Dosis', sans-serif;
+  line-height: 35px;
+}
+
+#sidebar {
+  position: absolute;
+  
+  top: 40px;
+  left: 20px;
+  width: 200px;
+
+  padding: 20px 20px 0 0;
+
+  text-align: right;
+  position: fixed;
+  border-right: solid 1px gray;
+}
+
+
+#sidebar .avatar {
+  padding: 0;
+  margin-left: 2px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px #ccc;
+  opacity: 1;
+}
+
+#sidebar .avatar:hover {
+  opacity: 0.8;
+}
+
+
+.ir, .icons, .twitter, .youtube, .github{
+       display: block;
+       border: 0;
+       text-indent: -999em;
+       overflow: hidden;
+       background-color: transparent;
+       background-repeat: no-repeat;
+       text-align: left;
+       direction: ltr;
+       line-height: 0;
+}
+
+.ir br, .icons br, .twitter br, .youtube br, .github br {
+      display: none;
+}
+
+.inline-block, .icons, .twitter, .youtube, .github, body header[role="banner"] h1,
+body header[role="banner"] h2, nav.article a.next,
+nav.article a.previous, #articles li, #articles .btn, .blog-archives article time {
+      display: inline-block;
+}
+
+.icons, .twitter, .youtube, .github {
+      width: 24px;
+      height: 24px;
+      background-position: center center;
+      background-color: #d58742;
+      border-radius: 10em;
+      background-size: 12px 12px;
+      vertical-align: middle;
+}
+
+.twitter {
+      background-image: url('http://dl.dropbox.com/u/40496552/site/twitter.png');
+      background-color: #169dbf;
+}
+
+.github {
+      background-image: url('http://dl.dropbox.com/u/40496552/site/github.png');
+        background-size: 16px 16px;
+        background-color: black;
+}
+
+.rss {
+      background-image: url('http://dl.dropbox.com/u/40496552/site/rss.png');
+        background-size: 10px 10px;
+}
+
+.twitter:hover, .github:hover, .rss:hover {
+    -webkit-box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    0px 0px 5px rgba(50, 50, 50, 0.75);
+    -ms-box-shadow:    0px 0px 5px rgba(50, 50, 50, 0.75);
+    box-shadow:         0px 0px 5px rgba(50, 50, 50, 0.75);
+}
+
+
+

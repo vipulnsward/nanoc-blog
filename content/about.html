@@ -1,0 +1,15 @@
+---
+title: "My Cool About Page"
+author: "Vipul A M"
+---
+
+<h1> My nice little "About" page</h1>
+
+<p>This is the about page for my new nanoc site</p>
+
+
+<% if @item[:author] %>
+  <p>This page was written by <%= @item[:author] %>.</p>
+<% end %>
+
+

@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title><%= @item[:title] %></title>
+    <link rel="stylesheet" type="text/css" href="/style.css" media="screen">
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc <%= Nanoc::VERSION %>"> 
+  </head>
+  <body>
+    <div id="main">
+	    <%= yield %>
+	    <p>Tags: <%= tags_for(@item) %></p>
+    </div>
+    <div id="sidebar">
+    
+	<a href = "/">
+	 <img src = "image/sword.svg" height = "75" width = "75" class = "avatar"></img>
+	</a>
+	   
+      <h3>
+       <a class = "twitter" href = "https://twitter.com/vipulnsward">twitter</a>
+       <a class = "github" href = "https://github.com/vipulnsward">github</a>
+      </h3>
+      <ul>
+       <li><a href="/blog/">blog</a></li>
+        <li><a href="/contact/">contact</a></li>
+        <li><a href="/cv/">cv</a></li>
+      </ul>
+
+    </div>
+  </body>
+</html>
