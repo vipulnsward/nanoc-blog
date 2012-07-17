@@ -4,29 +4,29 @@
     <meta charset="utf-8">
     <title><%= @item[:title] %></title>
     <link rel="stylesheet" type="text/css" href="/style.css" media="screen">
-
-    <!-- you don't need to keep this, but it's cool for stats! -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    <link rel="alternate icon" type="image/png" href="/sword.png"/>
     <meta name="generator" content="nanoc <%= Nanoc::VERSION %>"> 
   </head>
   <body>
     <div id="main">
 	    <%= yield %>
-	    <p>Tags: <%= tags_for(@item) %></p>
+	    <!--p>Tags: <%= tags_for(@item) %></p-->
     </div>
     <div id="sidebar">
     
 	<a href = "/">
-	 <img src = "image/sword.svg" height = "75" width = "75" class = "avatar"></img>
-	</a>
-	   
+	 <img src = "/image/sword.svg" height = "95" width = "95" class = "avatar" alt="sward" title="hath a sward"></img>
+ 	</a> 
+ 	<br/>
+	<h2><a href = "/">Vipul A M</a></h2>  
       <h3>
        <a class = "twitter" href = "https://twitter.com/vipulnsward">twitter</a>
        <a class = "github" href = "https://github.com/vipulnsward">github</a>
       </h3>
       <ul>
-       <li><a href="/blog/">blog</a></li>
-        <li><a href="/contact/">contact</a></li>
-        <li><a href="/cv/">cv</a></li>
+       <li><a href="/archive/">blog</a></li>
+        <li><a href="/about/">say hello!</a></li>
       </ul>
 
     </div>

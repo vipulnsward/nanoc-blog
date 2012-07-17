@@ -58,6 +58,15 @@ data_sources:
     # it will become “/about.html/” instead.
     allow_periods_in_identifiers: false
 
+
+
+
+title: "My Site"
+base_url: "http://"
+author_name: "Vipul A M"
+author_uri: "http://"
+
+
 # Configuration for the “watch” command, which watches a site for changes and
 # recompiles if necessary.
 watcher:
