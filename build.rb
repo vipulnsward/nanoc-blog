@@ -8,7 +8,7 @@ configure do
   set :bind, '127.0.0.1'
 end
 
-post '/hook' do
+post '/' do
   current_dir = File.dirname(__FILE__)
   log_file = "#{$logs_dir}/#{Time.now.iso8601}"
 
