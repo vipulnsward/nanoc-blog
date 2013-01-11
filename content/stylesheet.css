@@ -216,5 +216,20 @@ nav.article a.previous, #articles li, #articles .btn, .blog-archives article tim
     box-shadow:         0px 0px 5px rgba(50, 50, 50, 0.75);
 }
 
+.twtr-ft {display:none}
+.twtr-bd {
+    border-radius: 0 0 5px 5px;
+    background: #EEE;
+}
+.twtr-hd {
+    border-bottom: 1px dotted #DDD;
+    background: #E6E6E6;
+    border-radius: 5px 5px 0 0;
+}
+.twtr-doc {
+    border: 1px #DDD solid;
+    box-shadow: 0 14px 15px -10px rgba(0,0,0,.25);
+}
+
 
 

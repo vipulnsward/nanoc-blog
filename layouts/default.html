@@ -28,7 +28,34 @@
        <li><a href="/archive/">blog</a></li>
         <li><a href="/about/">say hello!</a></li>
       </ul>
-
+        <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+        <script>
+            new TWTR.Widget({
+                version: 2,
+                type: 'profile',
+                rpp: 6,
+                interval: 30000,
+                width: 200,
+                height: 300,
+                theme: {
+                    shell: {
+                        background: 'transparent',
+                        color: '#0a0a0a'
+                    },
+                    tweets: {
+                        background: 'transparent',
+                        color: '#2e2e2e',
+                        links: '#2ec7ff'
+                    }
+                },
+                features: {
+                    scrollbar: false,
+                    loop: false,
+                    live: true,
+                    behavior: 'default'
+                }
+            }).render().setUser('vipulnsward').start();
+        </script>
     </div>
   </body>
 </html>
