@@ -1,0 +1,44 @@
+GEM
+  remote: http://rubygems.org/
+  remote: http://gems.github.com/
+  specs:
+    adsf (1.1.1)
+      rack (>= 1.0.0)
+    coderay (1.0.8)
+    colored (1.2)
+    cri (2.3.0)
+      colored (>= 1.2)
+    kramdown (0.14.1)
+    mime-types (1.19)
+    nanoc (3.4.3)
+      cri (~> 2.2)
+    nanoc3 (3.3.0)
+      nanoc (>= 3.3.0)
+    nokogiri (1.5.6)
+    rack (1.4.1)
+    rack-protection (1.3.2)
+      rack
+    redcarpet (2.2.2)
+    rubypants (0.2.0)
+    sinatra (1.3.3)
+      rack (~> 1.3, >= 1.3.6)
+      rack-protection (~> 1.2)
+      tilt (~> 1.3, >= 1.3.3)
+    tilt (1.3.3)
+    typogruby (1.0.15)
+      rubypants
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  adsf
+  coderay
+  kramdown
+  mime-types
+  nanoc3
+  nokogiri
+  redcarpet
+  rubypants
+  sinatra
+  typogruby

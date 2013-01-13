@@ -1,7 +1,7 @@
 require 'sinatra'
 
 $output_dir = "/home/sward/work/nginx_web/"
-$logs_dir = "/home/sward/.logs/"
+$logs_dir = "/home/sward/.logs"
 
 configure do
   set :port, 2246
