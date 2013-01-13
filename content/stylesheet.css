@@ -164,7 +164,7 @@ a:hover {
 }
 
 
-.ir, .icons, .twitter,  .github{
+.ir, .icons, .twitter,  .github, .rss{
        display: block;
        border: 0;
        margin-top: 25px;
@@ -177,17 +177,17 @@ a:hover {
        line-height: 0;
 }
 
-.ir br, .icons br, .twitter br,  .github br {
+.ir br, .icons br, .twitter br, .github br, .rss br {
       display: none;
 }
 
-.inline-block, .icons, .twitter, .github, body header[role="banner"] h1,
+.inline-block, .icons, .twitter, .github, .rss, body header[role="banner"] h1,
 body header[role="banner"] h2, nav.article a.next,
 nav.article a.previous, #articles li, #articles .btn, .blog-archives article time {
       display: inline-block;
 }
-
-.icons, .twitter, .github {
+/*Icon Styling*/
+.icons, .twitter, .github, .rss {
       width: 26px;
       height: 26px;
       background-position: center center;
@@ -208,13 +208,19 @@ nav.article a.previous, #articles li, #articles .btn, .blog-archives article tim
       background-size: 26px 26px;
 }
 
+.rss {
+    background-image: url('/image/rss_icon.jpg');
+    background-color: rgba(255, 162, 17, 0);
+}
 
-.twitter:hover, .github:hover  {
+.twitter:hover, .github:hover, .rss:hover  {
     -webkit-box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.75);
     -moz-box-shadow:    0px 0px 5px rgba(50, 50, 50, 0.75);
     -ms-box-shadow:    0px 0px 5px rgba(50, 50, 50, 0.75);
     box-shadow:         0px 0px 5px rgba(50, 50, 50, 0.75);
 }
+
+/*Widget Styling*/
 
 .twtr-ft {display:none}
 .twtr-bd {
