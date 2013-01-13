@@ -1,15 +1,14 @@
 ---
 title: Categories
-h1: Browse by Category
+h1: All Categories
 ---
-<div id="home">&lArr; <a href="/">Return home</a></div>
+<div id="home">&lArr; <a href="/">Back Home</a></div>
 
 <h1><%= @item[:h1] %></h1>
 
 <% cats = all_categories.sort %>
 <% if cats.length > 0 %>
-<p>Here's what I've been writing about. Click a link to see all articles
-    about that topic.</p>
+<p>Here's what I've been writing about.</p>
 <p class="cloud"><%= link_categories(cats).join(' ') %></p>
 <% else %>
 <p>No categories yet. Try again later.</p>

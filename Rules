@@ -124,6 +124,10 @@ compile %r{^/201[0-9]{1}-[0-9]{2}-[0-9]{2}} do
   filter :argh
   layout 'post'
   filter :typogruby
+  filter :colorize_syntax,
+         :colorizers => { :ruby => :coderay },
+         :coderay    => {:line_numbers => :inline}
+
 end
 
 route %r{^/201[0-9]{1}-[0-9]{2}-[0-9]{2}} do
@@ -136,6 +140,9 @@ compile '*' do
     # don’t filter binary items
   else
     filter :erb
+    filter :colorize_syntax,
+           :colorizers => { :ruby => :coderay },
+           :coderay    => {:line_numbers => :inline}
     layout 'default'
   end
 end

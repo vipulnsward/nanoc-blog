@@ -10,10 +10,9 @@
 </head>
 <body>
 <div id="main">
-    <div id="home">&lArr; <a href="/">Return home</a></div>
-
-    <h1 class="top"><%= @item[:h1] %></h1>
-    <% puts @item.inspect%>
+    <h1 class="top"><%= @item[:h1] %></h1><br/>
+    <div id="home">&lArr; <a href="/">Back Home</a></div>
+    <div id="categories">&rArr; <a href="/categories/">All Categories</a></div>
     <% if !@item[:posts].nil? %>
     <ul class="archive">
         <% @item[:posts].each do |p| %>
