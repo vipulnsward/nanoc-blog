@@ -61,10 +61,10 @@ data_sources:
 
 
 
-title: "My Site"
-base_url: "http://"
+title: "Vipul A M"
+base_url: "http://vipulnsward.com"
 author_name: "Vipul A M"
-author_uri: "http://"
+author_uri: "http://vipulnsward.com"
 
 
 # Configuration for the “watch” command, which watches a site for changes and
