@@ -1,0 +1,67 @@
+---
+title: Ruby Frozen Strings
+h1: Frozen Strings in Ruby
+description: "Post about Frozen Strings introduced in Ruby 2.1 by Vipul A M"
+kind: article
+created_at: 2013-09-28
+categories:
+- ruby-features
+- blog
+- sward
+- ruby
+---
+
+<a href="http://rkh.im">Konstantin Hasse</a> recently <a href="http://rkh.im/ruby-2.1">blogged</a> about
+what recent additions are to Ruby 2.1.
+One of the features that intruiges me a lot is "Frozen Strings"f &trade;
+
+Thanks to <a href="https://charlie.bz/"> Charlie Somerville</a> Frozen
+Strings <a href="https://bugs.ruby-lang.org/issues/8579"> landed</a> into the 2.1 release.
+
+Strings are a integral part of any Ruby app, and a new String object gets created every time
+Ruby comes across a String literal, which is essential as they need to be mutable.
+This leads to creation of a lot of Objects.
+
+One preferred solution in the past has been the use of Symbols or Constants that create
+Objects just once and reference the same in your code.
+
+Consider below:
+
+<script src="https://gist.github.com/vipulnsward/a1332aaabfaf727f0ac0.js"></script>
+
+Notice that the String generates multiple Objects, while Constant and Symbol get reused.
+
+<h2>About Frozen Strings</h2>
+
+These can be defined by using a "f" suffix on strings and return true on call to "frozen?".
+All other operations are just similar to Strings.
+
+<script src="https://gist.github.com/vipulnsward/5738aa8c198109d2bf59.js"></script>
+
+The "f" suffix limits something like
+
+question_gorbypuff = "Hows "f "Gorbypuff?"
+
+and instead can be achieved by
+
+question_gorbypuff = "Hows " "Gorbypuff?"f
+
+<h2>How do they perform?</h2>
+
+Changes are visible immediately as below in case of String vs Frozen String literals
+processing by Ruby.
+
+<script src="https://gist.github.com/vipulnsward/b229ad027ac38bdad817.js"></script>
+
+Using an <a href="https://gist.github.com/vipulnsward/6746362">ObjectCounter</a> we also see
+how significant this is with the count of Objects created.
+
+<script src="https://gist.github.com/vipulnsward/d9df1faa0ec8994d2f79.js"></script>
+
+Which is a pretty huge gain in reducing our Object count.
+
+So grab hold of Ruby 2.1 today and try optimizing all those string intensive
+operations you've been doing, where Frozen strings would help.
+
+Also there's currently a <a href="https://bugs.ruby-lang.org/issues/8909">Ruby ticket </a> trying to
+adapt this behaviour to [] and {}
