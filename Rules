@@ -30,7 +30,9 @@ end
 # zero or more characters.
 
 preprocess do
-  create_category_pages
+    create_category_pages
+    create_robots_txt
+    create_sitemap
 end
 
 compile '/' do
@@ -42,6 +44,14 @@ end
 
 route '/stylesheet/' do
   '/style.css'
+end
+
+compile 'sitemap' do
+  filter :erb
+end
+
+route 'sitemap' do
+  item.identifier.chop + '.xml'
 end
 
 route '*' do

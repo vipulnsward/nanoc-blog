@@ -2,6 +2,7 @@ include Nanoc::Helpers::Blogging
 include Nanoc::Helpers::Rendering
 include Nanoc::Helpers::Tagging
 include Nanoc::Helpers::LinkTo
+include Nanoc3::Helpers::XMLSitemap
 include Categories
 require 'fileutils'
 require 'redcarpet'

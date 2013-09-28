@@ -23,6 +23,7 @@ There are many others out there, but Nanoc is pretty simple and unique in the wa
 <a href="http://thomas.pelletier.im/2012/02/switching-to-nanoc/"> This</a> article hepled me to set up the autobuild process.
 Its a sinatra app which is triggered by post-commit hooks from the github-repo, and on being hit refreshes the remote repo,
 with current data.
+
 <pre><code class="language-ruby">
 
   require 'sinatra'
@@ -42,7 +43,8 @@ with current data.
   %x(cd #{current_dir} && git pull origin master)
   %x(cd #{current_dir} && nanoc compile > #{log_file})
   %x(rm -R #{$output_dir}/* 2>> #{log_file})
-  %x(cd #{current_dir} && mv #{current_dir}/output/* #{$output_dir}/ 2>> #{log_file})
+  %x(cd #{current_dir} &&
+  mv #{current_dir}/output/* #{$output_dir}/ 2>> #{log_file})
   end
 
 </code></pre>
