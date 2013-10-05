@@ -1,0 +1,129 @@
+---
+title: KVC Collection Operators in Rubymotion
+h1: KVC Collection Operators in Rubymotion
+description: "Post about using Key Value Coding and KVC Collection Operators in Rubymotion by Vipul A M"
+kind: article
+created_at: 2013-10-05
+categories:
+- rubymotion
+- ios
+- ruby
+---
+
+Inspired by <a href="http://mattt.me/"> Mattt Thompson's </a> <a href="http://nshipster.com/kvc-collection-operators/">post </a>
+about <a href="https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/KeyValueCoding/Articles/CollectionOperators.html#//apple_ref/doc/uid/20002176-SW6">
+ KVC Collection Operators
+</a>, which ironically mocks about Ruby, I tried to find out how or what are the mechanisms to achieve the same using RubyMotion.
+
+As it turns out, its pretty much similar to its Objective-C counterpart and RubyMotion makes it easier than ever to achieve
+the underlying KVC operations.
+
+Before I dive into KVC Collection Operations, a bit about what KVC - Key Value Coding is.
+As stated <a href="https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/KeyValueCoding/Articles/Overview.html#//apple_ref/doc/uid/20001838-SW1">
+  here</a> --
+
+> <i>"...The key-value coding API provides a generic and automatic way to query an object for the values of
+  its keys and to set new values for those keys. ..."</i>
+
+So essentially it provides a protocol to dynamically query your objects, doing away with much of the boilerplate code.
+
+Think "Object.send" for Ojective-C
+
+KVC Collection Operators
+------------------------
+
+As mentioned <a href="https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/KeyValueCoding/Articles/CollectionOperators.html#//apple_ref/doc/uid/20002176-SW6">
+here</a>  --
+
+> <i> "Collection operators allow actions to be performed on the items of a collection using key path notation and an action operator." </i>
+
+There are three broad types of Collection Operators:
+
+* **Simple Collection Operators** - return strings, numbers, or dates, depending on the operator.
+* **Object Operators** - return an array.
+* **Array and Set Operators** - return an array or set, depending on the operator.
+
+I will be focusing on the first, to match to Matt's Post a bit along with re-using his data.
+
+Consider below information:
+
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Launch Date</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>iPhone 5</td>
+    <td>$199</td>
+    <td>September 21, 2012</td>
+  </tr>
+  <tr>
+    <td>iPad Mini</td>
+    <td>$329</td>
+    <td>November 2, 2012</td>
+  </tr>
+  <tr>
+    <td>MacBook Pro</td>
+    <td>$1699</td>
+    <td>June 11, 2012</td>
+  </tr>
+  <tr>
+    <td>iMac</td>
+    <td>$1299</td>
+    <td>November 2, 2012</td>
+  </tr>
+  </tbody>
+</table>
+
+
+We will define a Product Model to hold the above
+
+
+<script src="https://gist.github.com/vipulnsward/6832139.js"></script>
+
+Notice that I have defined simple methods to access Model properties instead of ***attr_reader/writer*** to defined the attribute accessors.
+
+We'll come back to why this needs to be done later.
+
+So all being set, we can now go on to define our collection as below.
+
+<script src="https://gist.github.com/vipulnsward/6832302.js"></script>
+
+All set. Now we can call collection methods defined <a href="https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/KeyValueCoding/Articles/CollectionOperators.html#//apple_ref/doc/uid/20002176-SW6">
+  here
+</a> using ***valueForKeyPath*** like
+
+* **@avg** - The @avg operator calculates Average of the values of property defined to its right.
+
+* **@count** - The @count operator gives out object count. This is same as ***Collection#count*** for us.
+
+* **@max** - The @max operator calculates maximum of the values of property defined to its right.
+
+* **@min** - The @min operator calculates minimum of the values of property defined to its right.
+
+* **@sum** - The @sum operator calculates sum of the values of property defined to its right.
+
+Armed with this we can now do
+
+<script src="https://gist.github.com/vipulnsward/6837667.js"></script>
+
+Neat.
+
+Getting back to why we can't use ***attr_accessors*** .
+
+RubyMotion throws following error right now, if we do use accessors:
+
+> ***Method `price' created by attr_reader/writer or define_method cannot be called from Objective-C. Please define manually the method instead.***
+
+Which is a bit odd, considering we'ed expect Rubymotion to define Ojective-C level properties.
+
+Oh and you can do
+
+<script src="https://gist.github.com/vipulnsward/62be7db7fdfbb29ac98c.js"></script>
+
+i.e. used ***valueForKeyPath("@max.self")*** (Collection methods), like on an array in our case.
+if ***Array#max*** seems too mainstream to you.
