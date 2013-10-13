@@ -1,0 +1,110 @@
+---
+title: NSPredicate in RubyMotion
+h1: NSPredicate in RubyMotion
+description: "Post about experiments using NSPredicate in Rubymotion by Vipul A M"
+author: "Vipul A M"
+kind: article
+created_at: 2013-10-13
+categories:
+- rubymotion
+- ios
+- ruby
+- nspredicate
+- kvo
+---
+
+This is first part of an inspired article from <a href="http://nshipster.com/nspredicate/">NSHipster</a> about using
+<a href="http://www.rubymotion.com/developer-center/api/NSPredicate.html"> NSPredicate</a> in Rubymotion.
+
+NSPredicate is used to define conditions to fetch data or to perform in-memory filtering.
+You can use a little SQL WHERE-like syntax and REGEX as we will discuss below.
+
+We'll start off with examples, to better explain the same. I will be resuing the data from a <a href="vipulnsward.com/2013-10-05-kvc-collection-operators-in-rubymotion/">
+  previous article about KVC Collection Operators.
+</a>
+
+Our data is as below:
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Launch Date</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>iPhone 5</td>
+    <td>$199</td>
+    <td>September 21, 2012</td>
+  </tr>
+  <tr>
+    <td>iPad Mini</td>
+    <td>$329</td>
+    <td>November 2, 2012</td>
+  </tr>
+  <tr>
+    <td>MacBook Pro</td>
+    <td>$1699</td>
+    <td>June 11, 2012</td>
+  </tr>
+  <tr>
+    <td>iMac</td>
+    <td>$1299</td>
+    <td>November 2, 2012</td>
+  </tr>
+  </tbody>
+</table>
+
+We'll reuse our model from before
+<script src="https://gist.github.com/vipulnsward/6832139.js"></script>
+
+and define collection as
+<script src="https://gist.github.com/vipulnsward/6832302.js"></script>
+
+All set. Let try filtering our data.
+
+For all of our filtering, I'l be using ***NSPredicate.predicateWithFormat*** from <a href="http://www.rubymotion.com/developer-center/api/NSPredicate.html#predicateWithFormat%3A-class_method">
+  here.</a> This gives us a new Predicate instace using our given String expression.
+
+So lets do some direct matching.
+
+<script src="https://gist.github.com/vipulnsward/6964353.js"></script>
+
+Cool.
+
+
+## Basic Comparisons
+
+NSPredicate allows basic comparisons as below over our properties
+
+* ==, = , >=, <= , >, <, != , <> - Same as you'd expect in an arithmatic expression, you can use all these to
+compare your properties.
+* BETWEEN - Specify values that lie within some range. ex- value BETWEEN {1 , 10}
+
+## Compound Predicates
+
+You can compound you comparisons using logical operations like
+
+* AND, &&
+* OR, ||
+* NOT, !
+
+## String Comparison
+
+Allows String Comparison using below operators
+
+* **BEGINSWITH:** Match String the begins with some substring.
+* **CONTAINS:** Match String containing substring.
+* **ENDSWITH:** Same as BEGINSWITH for END-mathching.
+* **LIKE:** Match String using SQL-"LIKE" modifier where '?' and '*' can be used as wildcard characters.
+* **MATCHES:** Match using a Regex
+
+Let see some of these in action.
+
+<script src="https://gist.github.com/vipulnsward/6964682.js"></script>
+
+Neat.
+
+In the next article, I l try discussing about more NSPredicate Operators, and different ways to generate Compound Predicates and Comparison Predicates.
+
